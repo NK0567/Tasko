@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Tasko
 
 **La marketplace des services, compétences et petits jobs du quotidien** — *« le Yango des petits jobs »*.
@@ -70,3 +71,6 @@ flutter run -d chrome
 ## Stack
 
 Flutter · Node.js / Express · PostgreSQL · Socket.IO · OpenStreetMap · NotchPay (Mobile Money) · React · Docker
+=======
+# Tasko
+>>>>>>> 97609c862cc8efda882955e96e95d2a4564d86e6
