@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: tasko-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-tasko}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-tasko_dev_password}
+      POSTGRES_DB: ${POSTGRES_DB:-tasko}
+    ports:
+      - "5433:5432"
+    volumes:
+      - tasko_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U tasko -d tasko"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  tasko_pgdata:
